@@ -30,6 +30,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="manage.py" />
+    <Compile Include="pythonTestCenter\helloWorld\models.py" />
+    <Compile Include="pythonTestCenter\helloWorld\tests.py" />
+    <Compile Include="pythonTestCenter\helloWorld\views.py" />
+    <Compile Include="pythonTestCenter\helloWorld\__init__.py" />
     <Compile Include="pythonTestCenter\__init__.py" />
     <Compile Include="pythonTestCenter\settings.py" />
     <Compile Include="pythonTestCenter\urls.py" />
@@ -44,6 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="pythonTestCenter\" />
+    <Folder Include="pythonTestCenter\helloWorld\" />
+    <Folder Include="pythonTestCenter\helloWorld\Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pythonTestCenter\helloWorld\Templates\index.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>
