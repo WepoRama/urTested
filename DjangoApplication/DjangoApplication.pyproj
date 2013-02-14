@@ -29,6 +29,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DjangoApplication\MyFirstApp\models.py" />
+    <Compile Include="DjangoApplication\MyFirstApp\tests.py" />
+    <Compile Include="DjangoApplication\MyFirstApp\views.py" />
+    <Compile Include="DjangoApplication\MyFirstApp\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="DjangoApplication\__init__.py" />
     <Compile Include="DjangoApplication\settings.py" />
@@ -44,6 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DjangoApplication\" />
+    <Folder Include="DjangoApplication\MyFirstApp\" />
+    <Folder Include="DjangoApplication\MyFirstApp\Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DjangoApplication\MyFirstApp\Templates\index.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>
