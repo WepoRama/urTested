@@ -19,7 +19,7 @@ class Answer (models.Model):
     correct = models.BooleanField()
     answer = models.CharField(max_length=50)
 
-# class for user and userrole
+# class for user and userrolen
 class User (models.Model):
     username = models.CharField(max_length=30)
     first_name = models.CharField(max_length=30)

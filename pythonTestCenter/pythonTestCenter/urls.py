@@ -9,8 +9,8 @@ urlpatterns = patterns('',
     url(r'^$', 'pythonTestCenter.helloWorld.views.home', name='home'),
     # url(r'^$', 'pythonTestCenter.views.home', name='home'),
     # url(r'^pythonTestCenter/', include('pythonTestCenter.pythonTestCenter.urls')),
-    url(r'accounts/login/$', 'django.contrib.auth.views.login', name='login'),
-    url(r'accounts/logout$', 'django.contrib.auth.views.logout', name='logout'),
+    url(r'accounts/login', 'django.contrib.auth.views.login', name='login'),
+    url(r'accounts/logout', 'django.contrib.auth.views.logout', name='logout'),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
