@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block header %} <input id="testName" placeholder="enter test name" autofocus required/>{% endblock %}
+{% block form %}
+    <form>
+        <p> Question [þurfum að koma counter hér inn]</p>
+        <input id="questText" placeholder="enter question" required width="300px" height="100px"/>
+        <p id="answers">
+            <input type="checkbox" id="ans1"/><label for="ans1"> <input placeholder="answer"required /></label> </br>
+            <input type="checkbox" id="ans2"/><label for="ans2"> <input placeholder="answer" required /></label> </br>
+            <button>Add answer</button>
+        </p>
+    </form>
+
+        <button>Add question</button> <!-- Hér ætti að koma virkni til að búa til nýtt test form -->
+        <button>save test</button> <!-- Hér þarf að koma inn virkni til að vista próf --> 
+
+{% endblock %}

@@ -50,9 +50,14 @@
     <Folder Include="pythonTestCenter\" />
     <Folder Include="pythonTestCenter\helloWorld\" />
     <Folder Include="pythonTestCenter\helloWorld\Templates\" />
+    <Folder Include="pythonTestCenter\helloWorld\Templates\Tests\" />
+    <Folder Include="pythonTestCenter\helloWorld\Templates\Register\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="pythonTestCenter\helloWorld\Templates\base.html" />
     <Content Include="pythonTestCenter\helloWorld\Templates\index.html" />
+    <Content Include="pythonTestCenter\helloWorld\Templates\Tests\createTest.html" />
+    <Content Include="pythonTestCenter\helloWorld\Templates\Tests\viewTest.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>
