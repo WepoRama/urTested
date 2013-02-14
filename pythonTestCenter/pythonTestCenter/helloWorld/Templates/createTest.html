@@ -4,15 +4,18 @@
 {% block form %}
     <form>
         <p> Question [count=1, count++]</p>
-        <input id="questText" placeholder="enter question" required width="300px" height="100px"/>
+        <input id="questText" placeholder="enter question" required/>
         <p id="answers">
             <input type="checkbox" id="ans1"/><label for="ans1"> <input placeholder="answer"required /></label> </br>
             <input type="checkbox" id="ans2"/><label for="ans2"> <input placeholder="answer" required /></label> </br>
-            <button>Add answer</button>
+            <button>Add answer</button> <!-- thegar ytt er a add answer aetti ad baetast vid ny lina med check box-->
+            <p>
+                Deadline <input id="deadline" type="date">
+            </p>
         </p>
     </form>
 
         <button>Add question</button> <!-- Her aetti ad koma virkni til ad bua til nytt test form -->
-        <button>save test</button> <!-- Her tharf ad koma inn virkni til ad vista pof --> 
+        <input type="submit"> <!-- Her tharf ad koma inn virkni til ad vista pof --> 
 
 {% endblock %}
