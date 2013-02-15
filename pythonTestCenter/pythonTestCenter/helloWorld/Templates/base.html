@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><title>urTest - {%block pagetitle %}{% endblock %}</title></head>
+<head><title>urTested {%block pagetitle %}{% endblock %}</title></head>
 
 <body>
+    <header> urTested online test service </header>
     <section id="testSection"> 
         <header id="textHeader">{%block header %} {%endblock %}</header>
+        <p id="testTitle">{%block title %} {%endblock %}</p>
         <form id="testQuestions">{%block form %} {%endblock %} </form>
     </section>
 
-
+    <footer> Feel free to contact us: urTested@urTested.is </footer>
 </body>
 </html>

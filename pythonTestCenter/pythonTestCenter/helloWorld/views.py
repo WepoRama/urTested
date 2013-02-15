@@ -5,5 +5,5 @@ from django.template.loader import render_to_string
 def home(request):
     return HttpResponse(render_to_string(
                                         'createTest.html',
-                                        #{'content': 'Hello wepoRama'}
+                                        #{'content': 'Hello urTest'}
                                         ))

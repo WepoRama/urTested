@@ -1,11 +1,27 @@
-<html>
-<head><title>online urTest</title></head>
 
-<body>
-    <!-- Spurning hvort °thad aetti ekki ad koma yfirlit yfir innskradan notenda einkunir og slikt-->
-    <!-- Her er spurning hvort ekki aetti ad koma felli listi með virkum profum-->
+{% extends 'base.html'%}
+    <!-- Spurning hvort thad aetti ekki ad koma fyrst view med yfirliti yfir innskradan notenda:
+         einkunir og jafnvel listi yfir þau prof sem eru virk og thar aetti ad vera haegt ad velja
+         prof til ad taka -->
 
-{{ content }}
+{% block header %} <!-- verdum ad setja inn fellilista sem inniheldur oll prof sem í bodi eru --> {% endblock %}
+{% block form %}
 
-</body>
-</html>
+
+    <form>
+        <p> Question [count=1, count++]</p>
+        <input id="questText" placeholder="enter question" required/>
+        <p id="answers">
+            <input type="checkbox" id="ans1"/><label for="ans1"> <input placeholder="answer"required /></label> </br>
+            <input type="checkbox" id="ans2"/><label for="ans2"> <input placeholder="answer" required /></label> </br>
+            <button>Add answer</button> <!-- thegar ytt er a add answer aetti ad baetast vid ny lina med check box-->
+            <p>
+                Deadline <input id="deadline" type="date">
+            </p>
+        </p>
+    </form>
+
+        <button>Add question</button> <!-- Her aetti ad koma virkni til ad bua til nytt test form -->
+        <input type="submit"> <!-- Her tharf ad koma inn virkni til ad vista pof --> 
+
+{% endblock %}
