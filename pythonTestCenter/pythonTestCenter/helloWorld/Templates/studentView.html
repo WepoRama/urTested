@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block pagetitle %}  Student {% endblock %}
+{% block header %} <header> Student view </header> {% endblock %}
+{% block title %} <p> Info about logged in user </p>{% endblock %}
+{% block form %}
+    
+    <form>
+        <ul id="takenTests">
+            <p> Taken tests </p> 
+            <li> test 1 </li>
+            <li> test 2 </li>
+            <li> test 3 </li>
+        </ul>
+        <ul id="avilableTests">
+            <p> Available tests </p> 
+            <li> test 1 </li>
+            <li> test 2 </li>
+            <li> test 3 </li>
+        </ul>
+    </form>
+
+{% endblock %}

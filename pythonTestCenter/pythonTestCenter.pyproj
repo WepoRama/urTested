@@ -57,6 +57,7 @@
     <Content Include="pythonTestCenter\helloWorld\Templates\base.html" />
     <Content Include="pythonTestCenter\helloWorld\Templates\createTest.html" />
     <Content Include="pythonTestCenter\helloWorld\Templates\index.html" />
+    <Content Include="pythonTestCenter\helloWorld\Templates\studentView.html" />
     <Content Include="pythonTestCenter\helloWorld\Templates\teacherView.html" />
     <Content Include="pythonTestCenter\helloWorld\Templates\Tests\viewTest.html" />
   </ItemGroup>
