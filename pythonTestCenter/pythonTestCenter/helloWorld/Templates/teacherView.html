@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block header %} <header> Teachers view </header> {% endblock %}
+{% block title %} <p> Info about logged in user </p>{% endblock %}
+{% block form %}
+    
+    <form>
+        <ul id="listTests"> 
+            <li> test 1 </li>
+            <li> test 2 </li>
+            <li> test 3 </li>
+        </ul>
+       
+    </form>
+        <p>
+            <button> Create new test </button> <!-- Link to createTest view -->
+        </p>
+
+{% endblock %}
