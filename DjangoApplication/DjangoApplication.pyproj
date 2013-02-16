@@ -52,6 +52,7 @@
     <Folder Include="DjangoApplication\MyFirstApp\Templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DjangoApplication\MyFirstApp\Templates\addQuestion.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\base.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\index.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\createTest.html" />
