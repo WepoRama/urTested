@@ -5,6 +5,7 @@ import django.db
 from models import Test
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template.context import RequestContext
+from DjangoApplication.MyFirstApp.models import Question
 def getTest(intId):
     t = Test.objects.get(test_id=1)
     return t.name
@@ -16,22 +17,33 @@ def home(request):
                                         {'content':r}
                                         ))
 def createTest(request):
-    return render_to_response('createTest.html', #{'test_id': p},
+    return render_to_response('createTest.html', 
                                context_instance=RequestContext(request))
-
 def createIt(request):
     #p = get_object_or_404(Test)
     named = request.POST['name']
     authored = request.POST['author']
-    expires = request.POST['expires']
-    test = Test.objects.create( name = named, author = authored, expires_=expires)
+    expiresDate = request.POST['expires']
+    test = Test.objects.create( name = named, author = authored, expires=expiresDate)
     test.save()
-    id = test.id()
+    id = test.id
+    ret = render_to_response('addQuestion.html', {
+            'test': test,
+            },
+        context_instance=RequestContext(request)
+        )
+    return ret
+def addQuestion(request, test_id):
+    test = get_object_or_404(Test, pk=test_id)
+    ask = request.POST['question']
+    points = request.POST['points']
+    question = Question.objects.create( question=ask, points=points, test=test)
+    question.save()
     return render_to_response('addQuestion.html', {
             'test': test,
-        },
+            },
         context_instance=RequestContext(request)
-        )                
+        )
 
     #try:
     #    selected_choice = p #.choice_set.get(pk=request.POST['choice'])

@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 
 {% block header %} <header> Create your test</header> {% endblock %}
-{% block title %} Stuff {% endblock %}
+{% block title %} Add a question {% endblock %}
+<h2>{{ test.name }}</h2>
 {% block form %}
     
-    <form action="/createIt/" method="post">
+    <form action="/{{ test.id }}/addQuestion/" method="post">
     {% csrf_token %}
-        <input id="name" name="name" placeholder="enter test name" autofocus required/>
-        <input id="author" name="author" placeholder="author" autofocus required/>
-            <p>
-                Deadline <input id="expire" name="expires" type="date">
-            </p>
+        <input id="question" name="question" placeholder="enter question" autofocus required/>
+        <input id="points" name="points" placeholder="points" required/>
         <p>
             <input type="submit" > <!-- Her tharf ad koma inn virkni til ad vista pof --> 
         </p>
