@@ -17,16 +17,19 @@
 {% endblock %}
 
 {% block answerform %}
-    {% if question %}
-    <form action="/{{ toQuestion }}/addAsnwer/" method="post">  
-    {% csrf_token %}
-        <input id="answer" name="answer" placeholder="enter answer" autofocus required/>
-        <input id="correct" name="correct" placeholder="correct" />
-        <p>
-            <input type="submit" > 
-        </p>
-    </form>
-    {% endif %}
+{{ test.question_set.all.reverse|slice:":1"  }}
+    <!--{ % if test.question %} -->
+    {% for lastOne in test.question_set.all.reverse|slice:":1" %}
+        <form action="/{{ lastOne.id }}/addAnswer/" method="post">  
+        {% csrf_token %}
+            <input id="answer" name="answer" placeholder="enter answer" autofocus required/>
+            <input id="correct" name="correct" placeholder="correct" />
+            <p>
+                <input type="submit" > 
+            </p>
+        </form>
+    {% endfor %}
+    <!-- { % endif %} -->
     
 {% endblock %}
 

@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^createIt/$', 'DjangoApplication.MyFirstApp.views.createIt', name='createIt'),
     #url(r'^addQuestion//$', 'DjangoApplication.MyFirstApp.views.addQuestion', name='addQuestion'),
     url(r'^(?P<test_id>\d+)/addQuestion/$', 'DjangoApplication.MyFirstApp.views.addQuestion'),
+    url(r'^(?P<question_id>\d+)/addAnswer/$', 'DjangoApplication.MyFirstApp.views.addAnswer'),
     # Examples:
     # url(r'^$', 'DjangoApplication.views.home', name='home'),
     # url(r'^DjangoApplication/', include('DjangoApplication.DjangoApplication.urls')),

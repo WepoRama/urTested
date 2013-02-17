@@ -6,6 +6,7 @@ from models import Test
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template.context import RequestContext
 from DjangoApplication.MyFirstApp.models import Question
+from DjangoApplication.MyFirstApp.models import Answer
 def getTest(intId):
     t = Test.objects.get(test_id=1)
     return t.name
@@ -44,7 +45,19 @@ def addQuestion(request, test_id):
             },
         context_instance=RequestContext(request)
         )
+def addAnswer(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    #test = Test.objects.get( test_id=question.test_id)
 
+    answer = request.POST['answer']
+    correct = request.POST['correct']
+    anAnswer = Answer.objects.create( question=question, answer=answer, correct=correct)
+    anAnswer.save()
+    return render_to_response('addQuestion.html', {
+            'test': question.test,
+            },
+        context_instance=RequestContext(request)
+        )
     #try:
     #    selected_choice = p #.choice_set.get(pk=request.POST['choice'])
     #except (KeyError, Choice.DoesNotExist):
