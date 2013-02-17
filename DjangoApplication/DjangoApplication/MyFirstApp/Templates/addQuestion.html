@@ -1,23 +1,42 @@
 {% extends 'base.html' %}
 
 {% block header %} <header> Create your test</header> {% endblock %}
+
 {% block title %} Add a question {% endblock %}
 <h2>{{ test.name }}</h2>
+
 {% block qlist %}
 <ul>
 {% for question in test.question_set.all %}
-    <li>{{ question.question }}</li>
+    <li>{{ question.question  }}({{ question.points }})</li>
+    <!-- { % set toQuestion = question.id %} -->
+
 {% endfor %}
 </ul>
+
 {% endblock %}
-{% block form %}
+
+{% block answerform %}
+    {% if question %}
+    <form action="/{{ toQuestion }}/addAsnwer/" method="post">  
+    {% csrf_token %}
+        <input id="answer" name="answer" placeholder="enter answer" autofocus required/>
+        <input id="correct" name="correct" placeholder="correct" />
+        <p>
+            <input type="submit" > 
+        </p>
+    </form>
+    {% endif %}
     
+{% endblock %}
+
+{% block form %}
     <form action="/{{ test.id }}/addQuestion/" method="post">
     {% csrf_token %}
         <input id="question" name="question" placeholder="enter question" autofocus required/>
         <input id="points" name="points" placeholder="points" required/>
         <p>
-            <input type="submit" > <!-- Her tharf ad koma inn virkni til ad vista pof --> 
+            <input type="submit" > 
         </p>
     </form>
 {% endblock %}
