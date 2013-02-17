@@ -22,18 +22,16 @@
 {% endblock %}
 
 {% block answerform %}
-{{ test.question_set.all.reverse|slice:":1"  }}
-    <!--{ % if test.question %} -->
-    {% for lastOne in test.question_set.all.reverse|slice:":1" %}
-        <form action="/{{ lastOne.id }}/addAnswer/" method="post">  
+    {% if current %} 
+        <form action="/{{ current.id }}/addAnswer/" method="post">  
         {% csrf_token %}
-            <input id="answer" name="answer" placeholder="enter answer" autofocus required/>
+            <input id="answer" name="answer" placeholder="enter answer" autofocus {% if not question %} required {% endif %} />
             <input type="checkbox" id="correct" name="correct" placeholder="correct" />
             <p>
                 <input type="submit" value="Skra svar" > 
             </p>
         </form>
-    {% endfor %}
+    {% endif %}
     <!-- { % endif %} -->
     
 {% endblock %}

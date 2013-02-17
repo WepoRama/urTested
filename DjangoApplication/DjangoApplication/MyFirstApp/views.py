@@ -42,6 +42,7 @@ def addQuestion(request, test_id):
     question.save()
     return render_to_response('addQuestion.html', {
             'test': test,
+            'current': question,
             },
         context_instance=RequestContext(request)
         )
@@ -58,6 +59,7 @@ def addAnswer(request, question_id):
     anAnswer.save()
     return render_to_response('addQuestion.html', {
             'test': question.test,
+            'current': question,
             },
         context_instance=RequestContext(request)
         )
