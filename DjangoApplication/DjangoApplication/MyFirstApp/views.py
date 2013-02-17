@@ -50,7 +50,10 @@ def addAnswer(request, question_id):
     #test = Test.objects.get( test_id=question.test_id)
 
     answer = request.POST['answer']
-    correct = request.POST['correct']
+    try:
+        correct = request.POST['correct']
+    except:
+        correct=False
     anAnswer = Answer.objects.create( question=question, answer=answer, correct=correct)
     anAnswer.save()
     return render_to_response('addQuestion.html', {

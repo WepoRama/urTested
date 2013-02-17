@@ -9,8 +9,13 @@
 <ul>
 {% for question in test.question_set.all %}
     <li>{{ question.question  }}({{ question.points }})</li>
-    <!-- { % set toQuestion = question.id %} -->
-
+    
+    <ul>
+    {% for answer in question.answer_set.all %}
+        <li>{{ answer.answer }} {{ answer.correct }}</li>
+    {% endfor %}
+    </ul>
+    
 {% endfor %}
 </ul>
 
@@ -23,9 +28,9 @@
         <form action="/{{ lastOne.id }}/addAnswer/" method="post">  
         {% csrf_token %}
             <input id="answer" name="answer" placeholder="enter answer" autofocus required/>
-            <input id="correct" name="correct" placeholder="correct" />
+            <input type="checkbox" id="correct" name="correct" placeholder="correct" />
             <p>
-                <input type="submit" > 
+                <input type="submit" value="Skra svar" > 
             </p>
         </form>
     {% endfor %}
@@ -39,7 +44,7 @@
         <input id="question" name="question" placeholder="enter question" autofocus required/>
         <input id="points" name="points" placeholder="points" required/>
         <p>
-            <input type="submit" > 
+            <input type="submit" value="Skra spurningu"> 
         </p>
     </form>
 {% endblock %}
