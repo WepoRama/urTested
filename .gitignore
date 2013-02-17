@@ -138,6 +138,7 @@ Desktop.ini
 # Packages
 *.egg
 *.egg-info
+*.pyc
 dist
 build
 eggs
