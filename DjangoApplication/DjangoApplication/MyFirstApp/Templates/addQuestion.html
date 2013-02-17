@@ -3,6 +3,13 @@
 {% block header %} <header> Create your test</header> {% endblock %}
 {% block title %} Add a question {% endblock %}
 <h2>{{ test.name }}</h2>
+{% block qlist %}
+<ul>
+{% for question in test.question_set.all %}
+    <li>{{ question.question }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
 {% block form %}
     
     <form action="/{{ test.id }}/addQuestion/" method="post">
