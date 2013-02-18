@@ -108,7 +108,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'pythonTestCenter.urls'
@@ -117,7 +117,9 @@ ROOT_URLCONF = 'pythonTestCenter.urls'
 WSGI_APPLICATION = 'pythonTestCenter.wsgi.application'
 
 TEMPLATE_DIRS = (
-                 os.path.join(os.path.dirname(__file__), 'template').replace('\\','/'),
+    #os.path.join(os.path.dirname(__file__), 'template').replace('\\','/'),
+    "C:/Users/Lenovo/Documents/GitHub/urTested/pythonTestCenter/pythonTestCenter/helloWorld/Templates/Register",
+    "C:/Users/Lenovo/Documents/GitHub/urTested/pythonTestCenter/pythonTestCenter/helloWorld/Templates/Tests",
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
