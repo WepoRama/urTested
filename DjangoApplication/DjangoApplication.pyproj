@@ -50,12 +50,14 @@
     <Folder Include="DjangoApplication\" />
     <Folder Include="DjangoApplication\MyFirstApp\" />
     <Folder Include="DjangoApplication\MyFirstApp\Templates\" />
+    <Folder Include="DjangoApplication\MyFirstApp\Templates\registration\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DjangoApplication\MyFirstApp\Templates\addQuestion.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\base.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\index.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\createTest.html" />
+    <Content Include="DjangoApplication\MyFirstApp\Templates\registration\login.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>

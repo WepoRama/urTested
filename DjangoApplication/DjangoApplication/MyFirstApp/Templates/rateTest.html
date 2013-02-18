@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %} <header> View the score</header> {% endblock %}
+
+{% block title %} The score {% endblock %}
+<h2>{{ test.name }}</h2>
+
+{% block form %}
+your score: {{ score.score }}
+{% endblock %}

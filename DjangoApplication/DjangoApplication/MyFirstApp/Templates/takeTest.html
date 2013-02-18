@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %} <header> Take the test</header> {% endblock %}
+
+{% block title %} take the test {% endblock %}
+<h2>{{ test.name }}</h2>
+
+{% block form %}
+    <form action="/{{ test.id }}/rateTest" method="post">
+    {% csrf_token %}
+    {% for question in test.question_set.all %}
+        <li>{{ question.question  }}({{ question.points }})</li>
+    
+        <ul>
+        {% for answer in question.answer_set.all %}
+            <input type="radio" name="{{ question.id }}" value="{{ answer.id }}"> {{ answer.answer }}<br>
+        {% endfor %}
+        </ul>
+    
+    {% endfor %}
+    <p> <input name="name"></p> 
+    <p>
+        <input type="submit" value="Skra svor"> 
+    </p>
+
+    </form>
+{% endblock %}

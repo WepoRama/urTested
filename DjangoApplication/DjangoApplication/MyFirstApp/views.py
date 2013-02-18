@@ -58,6 +58,20 @@ def addAnswer(request, question_id):
             },
         context_instance=RequestContext(request)
         )
+def login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    txt = request.POST['login']
+    txt = request.POST['next']
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            return render_to_response('createTest.html')
+       #else:
+            # Return a 'disabled account' error message
+        #else:
+            # Return an 'invalid login' error message.
     #try:
     #    selected_choice = p #.choice_set.get(pk=request.POST['choice'])
     #except (KeyError, Choice.DoesNotExist):
