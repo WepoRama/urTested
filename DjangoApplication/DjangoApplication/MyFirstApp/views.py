@@ -5,8 +5,9 @@ import django.db
 from models import Test
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template.context import RequestContext
-from DjangoApplication.MyFirstApp.models import Question
+from DjangoApplication.MyFirstApp.models import Question, Score
 from DjangoApplication.MyFirstApp.models import Answer
+import locale
 def getTest(intId):
     t = Test.objects.get(test_id=1)
     return t.name
@@ -63,6 +64,34 @@ def addAnswer(request, question_id):
             },
         context_instance=RequestContext(request)
         )
+def takeTest(request, test_id):
+    test = get_object_or_404(Test, pk=test_id)
+    return render_to_response('takeTest.html', {
+            'test': test,
+            },
+        context_instance=RequestContext(request)
+        )
+def rateTest(request, test_id):
+    test = get_object_or_404(Test, pk=test_id)
+    scored = 0
+    for item in test.question_set.all():
+        qid = locale.format("%d", item.id)
+        ans = request.POST[qid]
+        check = Answer.objects.get(id = ans )
+        if check.correct:
+            question = check.question
+            scored += question.points
+    name = request.POST['name']
+    score = Score.objects.create( score=scored, test=test, name=name)
+    score.save()
+    return render_to_response('rateTest.html', {
+            'test': test,
+            'score': score,
+            },
+        context_instance=RequestContext(request)
+        )
+
+
     #try:
     #    selected_choice = p #.choice_set.get(pk=request.POST['choice'])
     #except (KeyError, Choice.DoesNotExist):

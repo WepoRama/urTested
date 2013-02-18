@@ -7,6 +7,8 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     #url(r'^$', 'DjangoApplication.MyFirstApp.views.home', name='home'),
     url(r'^createTest$', 'DjangoApplication.MyFirstApp.views.createTest', name='createTest'),
+    url(r'^(?P<test_id>\d+)/takeTest$', 'DjangoApplication.MyFirstApp.views.takeTest', name='takeTest'),
+    url(r'^(?P<test_id>\d+)/rateTest$', 'DjangoApplication.MyFirstApp.views.rateTest', name='rateTest'),
     url(r'^createIt/$', 'DjangoApplication.MyFirstApp.views.createIt', name='createIt'),
     #url(r'^addQuestion//$', 'DjangoApplication.MyFirstApp.views.addQuestion', name='addQuestion'),
     url(r'^(?P<test_id>\d+)/addQuestion/$', 'DjangoApplication.MyFirstApp.views.addQuestion'),

@@ -21,3 +21,7 @@ class Answer (models.Model):
     question = models.ForeignKey(Question)
     correct = models.BooleanField()
     answer = models.CharField(max_length=50)
+class Score (models.Model):
+    test = models.ForeignKey(Test)
+    score = models.IntegerField()
+    name = models.CharField(max_length=50)
