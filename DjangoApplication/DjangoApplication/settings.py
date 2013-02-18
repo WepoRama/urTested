@@ -28,7 +28,7 @@ DATABASES = {
     #},
     'local': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:\\temp\\urtested.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'D:\\home\\site\\wwwroot\\DjangoApplication',
     },
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
