@@ -32,7 +32,8 @@ DATABASES = {
     },
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:\\Users\\Ella\\Documents\\_HR\\winaz\\urTested\\DjangoApplication\\urtested2.db',                      # Or path to database file if using sqlite3.
+        #'NAME': 'C:\\Users\\Ella\\Documents\\_HR\\winaz\\urTested\\DjangoApplication\\urtested2.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'D:\\home\\site\\wwwroot\\DjangoApplication',
     },
     #'azure': {
     #    'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
