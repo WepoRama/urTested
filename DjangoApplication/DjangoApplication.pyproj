@@ -56,8 +56,10 @@
     <Content Include="DjangoApplication\MyFirstApp\Templates\base.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\index.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\createTest.html" />
+    <Content Include="DjangoApplication\MyFirstApp\Templates\listTests.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\rateTest.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\takeTest.html" />
+    <Content Include="DjangoApplication\MyFirstApp\Templates\choose.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>
