@@ -90,7 +90,11 @@ def rateTest(request, test_id):
             },
         context_instance=RequestContext(request)
         )
-
+def choose(request):
+    return render_to_response('choose.html', {
+            },
+        context_instance=RequestContext(request)
+        )
 
     #try:
     #    selected_choice = p #.choice_set.get(pk=request.POST['choice'])

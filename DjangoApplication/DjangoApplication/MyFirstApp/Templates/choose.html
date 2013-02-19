@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block header %} <header> Choose your path</header> {% endblock %}
+
+{% block title %} Teacher to create tests; Student to take tests. {% endblock %}
+<h2>{{ test.name }}</h2>
+
+{% block answerform %}
+        <a href="createTest">Teacher</a>
+        <a href="listTests">Student</a>
+{% endblock %}
