@@ -8,6 +8,7 @@ from django.template.context import RequestContext
 from DjangoApplication.MyFirstApp.models import Question, Score
 from DjangoApplication.MyFirstApp.models import Answer
 import locale
+from datetime import date
 def getTest(intId):
     t = Test.objects.get(test_id=1)
     return t.name
@@ -95,20 +96,10 @@ def choose(request):
             },
         context_instance=RequestContext(request)
         )
-
-    #try:
-    #    selected_choice = p #.choice_set.get(pk=request.POST['choice'])
-    #except (KeyError, Choice.DoesNotExist):
-    #    # Redisplay the poll voting form.
-    #    return render_to_response('polls/detail.html', {
-    #        'poll': p,
-    #        'error_message': "You didn't select a choice.",
-    #    }, context_instance=RequestContext(request))
-    #else:
-    #    selected_choice.votes += 1
-    #    selected_choice.save()
-    #    # Always return an HttpResponseRedirect after successfully dealing
-    #    # with POST data. This prevents data from being posted twice if a
-    #    # user hits the Back button.
-    #    return HttpResponseRedirect(reverse('polls.views.results', args=(p.id,)))
-
+def listTests(request):
+    tests = Test.objects.all() #.filter( expires__gt ==  date.today() )     
+    return render_to_response('listTests.html', {
+            'tests': tests,
+        },
+    context_instance=RequestContext(request)
+    )

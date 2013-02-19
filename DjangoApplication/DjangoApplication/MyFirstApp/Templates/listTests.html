@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %} <header> Choose your test</header> {% endblock %}
+
+{% block qlist %}
+<ul>
+{% for test in tests %}
+    <li>{{ test.name  }} <a href ="{{ test.id }}/takeTest">take test</a> </li>
+        
+{% endfor %}
+</ul>
+
+{% endblock %}
