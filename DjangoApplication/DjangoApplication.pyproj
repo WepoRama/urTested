@@ -29,6 +29,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DjangoApplication\admin.py" />
     <Compile Include="DjangoApplication\MyFirstApp\models.py" />
     <Compile Include="DjangoApplication\MyFirstApp\tests.py" />
     <Compile Include="DjangoApplication\MyFirstApp\views.py" />
@@ -50,6 +51,7 @@
     <Folder Include="DjangoApplication\" />
     <Folder Include="DjangoApplication\MyFirstApp\" />
     <Folder Include="DjangoApplication\MyFirstApp\Templates\" />
+    <Folder Include="DjangoApplication\MyFirstApp\Templates\registration\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DjangoApplication\MyFirstApp\Templates\addQuestion.html" />
@@ -58,6 +60,7 @@
     <Content Include="DjangoApplication\MyFirstApp\Templates\createTest.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\listTests.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\rateTest.html" />
+    <Content Include="DjangoApplication\MyFirstApp\Templates\registration\login.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\takeTest.html" />
     <Content Include="DjangoApplication\MyFirstApp\Templates\choose.html" />
   </ItemGroup>

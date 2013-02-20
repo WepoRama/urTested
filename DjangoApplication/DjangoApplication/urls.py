@@ -1,14 +1,16 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-
+import django.contrib.auth
 
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'DjangoApplication.MyFirstApp.views.choose', name='choose'),
+    url(r'^$', 'django.contrib.auth.views.login', name='login'),
+    url(r'^accounts/profile/$', 'DjangoApplication.MyFirstApp.views.choose', name='choose'),
+    
+    #url(r'^$', 'DjangoApplication.MyFirstApp.views.login', name='login'),
     url(r'^createTest$', 'DjangoApplication.MyFirstApp.views.createTest', name='createTest'),
     url(r'^listTests$', 'DjangoApplication.MyFirstApp.views.listTests', name='listTests'),
     url(r'^(?P<test_id>\d+)/takeTest$', 'DjangoApplication.MyFirstApp.views.takeTest', name='takeTest'),

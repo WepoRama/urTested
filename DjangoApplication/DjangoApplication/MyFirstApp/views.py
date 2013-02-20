@@ -9,16 +9,7 @@ from DjangoApplication.MyFirstApp.models import Question, Score
 from DjangoApplication.MyFirstApp.models import Answer
 import locale
 from datetime import date
-def getTest(intId):
-    t = Test.objects.get(test_id=1)
-    return t.name
 
-def home(request):
-    r = getTest(0)
-    return HttpResponse(render_to_string(
-                                        'index.html',
-                                        {'content':r}
-                                        ))
 def createTest(request):
     return render_to_response('createTest.html', 
                                context_instance=RequestContext(request))
@@ -92,10 +83,16 @@ def rateTest(request, test_id):
         context_instance=RequestContext(request)
         )
 def choose(request):
-    return render_to_response('choose.html', {
+    if request.user.has_perm('MyFirstApp.add_test'):
+        return render_to_response('createTest.html', {
             },
         context_instance=RequestContext(request)
         )
+    else:
+        return render_to_response('listTests.html', {
+            },
+            context_instance=RequestContext(request)
+            )
 def listTests(request):
     allTests = Test.objects.all().filter()
     tests = allTests.exclude( expires__lt =  date.today() )     
@@ -104,3 +101,18 @@ def listTests(request):
         },
     context_instance=RequestContext(request)
     )
+def login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    txt = request.POST['login']
+    txt = request.POST['next']
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            #if user.
+            return render_to_response('choose.html')
+       #else:
+            # Return a 'disabled account' error message
+        #else:
+            # Return an 'invalid login' error message.
