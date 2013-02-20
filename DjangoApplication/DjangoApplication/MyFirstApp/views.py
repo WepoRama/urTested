@@ -89,10 +89,7 @@ def choose(request):
         context_instance=RequestContext(request)
         )
     else:
-        return render_to_response('listTests.html', {
-            },
-            context_instance=RequestContext(request)
-            )
+        return listTests(request)
 def listTests(request):
     allTests = Test.objects.all().filter()
     tests = allTests.exclude( expires__lt =  date.today() )     
